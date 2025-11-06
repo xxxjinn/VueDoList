@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { musicData } from '@/assets/data';
+import { musicData } from '@/data/data';
 import type { Music } from '@/types/dataTypes';
 import { onMounted, ref } from 'vue';
 
