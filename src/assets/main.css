@@ -4,7 +4,6 @@
 
 body {
   @apply bg-cover bg-center;
-  background-color: rgb(252, 251, 237);
   font-family: 'Pretendard', sans-serif;
   background-image: url('dots.png');
 }
