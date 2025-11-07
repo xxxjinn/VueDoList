@@ -7,7 +7,7 @@ import binIcon from '@/assets/bin-icon.svg';
 const isChecked = ref(false);
 const textStyle = computed(() =>
   isChecked.value ? 'text-gray-400 line-through' : 'text-gray-600',
-);
+); //computed(): ref 값이 바뀌면 자동으로 다시 계산
 </script>
 
 <template>
