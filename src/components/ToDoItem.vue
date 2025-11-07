@@ -13,7 +13,7 @@ const textStyle = computed(() =>
 <template>
   <div class="flex gap-3 items-center justify-between">
     <div class="flex gap-3 items-start">
-      <input type="checkbox" class="min-w-5 min-h-5 accent-pink-500" v-model="isChecked" />
+      <input type="checkbox" class="min-w-5 min-h-5 accent-primary-300" v-model="isChecked" />
       <p :class="textStyle">할 일은 어쩌고 저쩌고 집가서 밥먹고 유튜브보고 간식먹고 낮잠자고</p>
     </div>
     <div class="flex gap-1">
