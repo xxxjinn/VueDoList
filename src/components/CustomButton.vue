@@ -15,8 +15,9 @@ const props = withDefaults(defineProps<Props>(), {
   <button
     class="flex items-center justify-center hover:opacity-60"
     :class="{
-      'w-16 h-8 text-sm ': props.variant === 'text',
-      'w-8 h-8': props.variant === 'icon',
+      'min-w-16 h-9 text-sm font-medium text-gray-600 bg-gray-200/50 rounded-md p-4':
+        props.variant === 'text',
+      'min-w-8 min-h-8': props.variant === 'icon',
     }"
   >
     <template v-if="props.variant === 'text'">
