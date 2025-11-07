@@ -27,6 +27,8 @@ onMounted(() => {
 <template>
   <div class="w-full h-8 flex justify-center px-4 flex-col">
     <h1 class="font-bold text-xl">{{ today }}</h1>
-    <p class="font-medium">💿 오노추 - {{ todayMusic?.title }} ({{ todayMusic?.artist }})🎵</p>
+    <p class="font-medium text-gray-600">
+      💿 오노추 - {{ todayMusic?.title }} ({{ todayMusic?.artist }})🎵
+    </p>
   </div>
 </template>
