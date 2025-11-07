@@ -5,7 +5,9 @@ import pencilIcon from '@/assets/pencil-icon.svg';
 import binIcon from '@/assets/bin-icon.svg';
 
 const isChecked = ref(false);
-const textStyle = computed(() => (isChecked.value ? 'text-gray-500 line-through' : 'text-black'));
+const textStyle = computed(() =>
+  isChecked.value ? 'text-gray-400 line-through' : 'text-gray-600',
+);
 </script>
 
 <template>
