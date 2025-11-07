@@ -3,5 +3,16 @@ import ToDoItem from '@/components/ToDoItem.vue';
 </script>
 
 <template>
-  <ToDoItem />
+  <div class="w-full h-full overflow-y-scroll px-2 flex flex-col gap-6">
+    <ToDoItem />
+    <ToDoItem />
+    <ToDoItem />
+    <ToDoItem />
+    <ToDoItem />
+    <ToDoItem />
+    <ToDoItem />
+    <ToDoItem />
+    <ToDoItem />
+    <ToDoItem />
+  </div>
 </template>
