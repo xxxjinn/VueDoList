@@ -7,7 +7,6 @@ interface Props {
   icon?: string;
   size?: 'sm' | 'md';
   type?: 'button' | 'submit';
-  onClick?: () => void;
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -42,13 +41,15 @@ const buttonClass = computed(() => {
 
   return `${base} ${variantMap[props.variant]} ${sizeClass}`;
 });
+
+const emit = defineEmits(['click']);
 </script>
 
 <template>
   <button
     class="flex items-center justify-center hover:opacity-80"
     :class="buttonClass"
-    @click="props.onClick?.()"
+    @click="emit('click')"
     :type="props.type"
   >
     <template v-if="props.variant === 'default' || props.variant === 'secondary'">
