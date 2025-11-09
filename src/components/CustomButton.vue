@@ -6,12 +6,15 @@ interface Props {
   text?: string;
   icon?: string;
   size?: 'sm' | 'md';
+  type?: 'button' | 'submit';
+  onClick?: () => void;
 }
 
 const props = withDefaults(defineProps<Props>(), {
   //variant props default 설정
   variant: 'default',
   size: 'sm',
+  type: 'button',
 });
 
 const buttonClass = computed(() => {
@@ -42,7 +45,12 @@ const buttonClass = computed(() => {
 </script>
 
 <template>
-  <button class="flex items-center justify-center hover:opacity-80" :class="buttonClass">
+  <button
+    class="flex items-center justify-center hover:opacity-80"
+    :class="buttonClass"
+    @click="props.onClick?.()"
+    :type="props.type"
+  >
     <template v-if="props.variant === 'default' || props.variant === 'secondary'">
       {{ props.text }}
     </template>
