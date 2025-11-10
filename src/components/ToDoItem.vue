@@ -19,9 +19,9 @@ interface Props {
 
 const props = defineProps<Props>();
 
-const store = useToDoStore();
+const todoStore = useToDoStore();
 const handleDeleteButton = (id: number) => {
-  store.deleteToDoItem(id);
+  todoStore.deleteToDoItem(id);
 };
 </script>
 
