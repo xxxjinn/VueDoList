@@ -1,11 +1,14 @@
 <script setup lang="ts">
+import { useToDoStore } from '@/store/store';
 import { ref } from 'vue';
 import CustomButton from './CustomButton.vue';
 
 const inputText = ref('');
 
+const todoStore = useToDoStore();
+
 const addToDoItem = () => {
-  console.log(inputText.value); //이후 zustand에 저장하는 코드로 바꿔야 함
+  todoStore.addToDoItem({ id: Date.now(), toDoText: inputText.value });
   inputText.value = '';
 };
 </script>
