@@ -5,10 +5,10 @@ import CustomButton from './CustomButton.vue';
 
 const inputText = ref('');
 
-const todoStore = useToDoStore();
+const toDoStore = useToDoStore();
 
 const addToDoItem = () => {
-  todoStore.addToDoItem({ id: Date.now(), toDoText: inputText.value });
+  toDoStore.addToDoItem({ id: Date.now(), toDoText: inputText.value, isChecked: false });
   inputText.value = '';
 };
 </script>
