@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import binIcon from '@/assets/bin-icon.svg';
 import pencilIcon from '@/assets/pencil-icon.svg';
+import { useToDoStore } from '@/store/store';
 import { computed, ref } from 'vue';
 import CustomButton from './CustomButton.vue';
 
@@ -17,6 +18,11 @@ interface Props {
 }
 
 const props = defineProps<Props>();
+
+const store = useToDoStore();
+const deleteButtonHandler = (id: number) => {
+  store.deleteToDoItem(id);
+};
 </script>
 
 <template>
@@ -27,7 +33,7 @@ const props = defineProps<Props>();
     </div>
     <div class="flex gap-1">
       <CustomButton variant="icon" :icon="pencilIcon" />
-      <CustomButton variant="icon" :icon="binIcon" />
+      <CustomButton variant="icon" :icon="binIcon" @click="deleteButtonHandler(props.todo.id)" />
     </div>
   </div>
 </template>

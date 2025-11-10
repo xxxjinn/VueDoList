@@ -7,5 +7,8 @@ export const useToDoStore = defineStore('todos', {
     addToDoItem(todo: ToDoItem) {
       this.todos.push(todo);
     },
+    deleteToDoItem(id: number) {
+      this.todos = this.todos.filter((todo) => todo.id !== id);
+    },
   },
 });
