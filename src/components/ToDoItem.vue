@@ -55,7 +55,13 @@ const textStyle = computed(() =>
         :disabled="isEditMode"
       />
       <p v-if="!isEditMode" :class="textStyle">{{ props.todo.toDoText }}</p>
-      <input v-else type="text" v-model="inputText" class="w-full bg-white/60 text-gray-600" />
+      <input
+        v-else
+        type="text"
+        v-model="inputText"
+        class="w-full bg-white/60 text-gray-600"
+        @keyup.enter="toggleEditMode"
+      />
     </div>
     <div class="flex gap-1">
       <CustomButton
