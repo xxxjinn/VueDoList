@@ -13,5 +13,12 @@ export const useToDoStore = defineStore('todos', {
     deleteAllToDoItem() {
       this.todos = [];
     },
+    editToDoItem(id: number, newText: string) {
+      const todo = this.todos.find((todo) => todo.id === id);
+
+      if (todo) {
+        todo.toDoText = newText;
+      }
+    },
   },
 });
