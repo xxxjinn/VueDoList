@@ -1,6 +1,12 @@
 <script setup lang="ts">
 import ToDoList from '@/components/ToDoList.vue';
+import { useToDoStore } from '@/store/store';
 import CustomButton from './CustomButton.vue';
+
+const todoStore = useToDoStore();
+const handleDeleteAllButton = () => {
+  todoStore.deleteAllToDoItem();
+};
 </script>
 
 <template>
@@ -9,7 +15,7 @@ import CustomButton from './CustomButton.vue';
   >
     <div class="flex items-center justify-between w-full">
       <h1 class="text-3xl font-semibold">Vue Do List</h1>
-      <CustomButton text="목록 초기화" />
+      <CustomButton text="전체삭제" @click="handleDeleteAllButton" />
     </div>
     <ToDoList />
   </div>

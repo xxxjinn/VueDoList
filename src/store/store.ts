@@ -10,5 +10,8 @@ export const useToDoStore = defineStore('todos', {
     deleteToDoItem(id: number) {
       this.todos = this.todos.filter((todo) => todo.id !== id);
     },
+    deleteAllToDoItem() {
+      this.todos = [];
+    },
   },
 });
