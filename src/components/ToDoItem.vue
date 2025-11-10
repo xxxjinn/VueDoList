@@ -45,34 +45,37 @@ const textStyle = computed(() =>
 </script>
 
 <template>
-  <div class="flex gap-3 items-center justify-between">
-    <div class="flex gap-3 items-start w-full">
+  <div class="flex items-center justify-between gap-3 w-full">
+    <label class="flex items-center gap-3 flex-1 cursor-pointer">
       <input
         type="checkbox"
-        class="min-w-5 min-h-5 accent-primary-300"
+        class="min-w-5 min-h-5 accent-primary-300 cursor-pointer"
         :checked="props.todo.isChecked"
         @change="handleToggleChecked"
         :disabled="isEditMode"
       />
-      <p v-if="!isEditMode" :class="textStyle">{{ props.todo.toDoText }}</p>
+      <p v-if="!isEditMode" :class="[textStyle, 'flex-1']">{{ props.todo.toDoText }}</p>
       <input
         v-else
         type="text"
         v-model="inputText"
-        class="w-full bg-white/60 text-gray-600"
+        class="flex-1 bg-white/60 text-gray-600"
         @keyup.enter="toggleEditMode"
+        aria-label="수정할 할 일 입력"
       />
-    </div>
+    </label>
     <div class="flex gap-1">
       <CustomButton
         variant="icon"
         :icon="isEditMode ? checkIcon : pencilIcon"
         @click="toggleEditMode"
+        :aria-label="isEditMode ? '수정 완료' : '수정'"
       />
       <CustomButton
         variant="icon"
         :icon="isEditMode ? deleteIcon : binIcon"
         @click="handleDeleteOrCancel"
+        :aria-label="isEditMode ? '수정 취소' : '삭제'"
       />
     </div>
   </div>
