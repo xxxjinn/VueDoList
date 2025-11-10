@@ -52,6 +52,7 @@ const textStyle = computed(() =>
         class="min-w-5 min-h-5 accent-primary-300"
         :checked="props.todo.isChecked"
         @change="handleToggleChecked"
+        :disabled="isEditMode"
       />
       <p v-if="!isEditMode" :class="textStyle">{{ props.todo.toDoText }}</p>
       <input v-else type="text" v-model="inputText" class="w-full bg-white/60 text-gray-600" />
