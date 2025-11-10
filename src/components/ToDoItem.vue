@@ -20,7 +20,7 @@ interface Props {
 const props = defineProps<Props>();
 
 const store = useToDoStore();
-const deleteButtonHandler = (id: number) => {
+const handleDeleteButton = (id: number) => {
   store.deleteToDoItem(id);
 };
 </script>
@@ -33,7 +33,7 @@ const deleteButtonHandler = (id: number) => {
     </div>
     <div class="flex gap-1">
       <CustomButton variant="icon" :icon="pencilIcon" />
-      <CustomButton variant="icon" :icon="binIcon" @click="deleteButtonHandler(props.todo.id)" />
+      <CustomButton variant="icon" :icon="binIcon" @click="handleDeleteButton(props.todo.id)" />
     </div>
   </div>
 </template>
