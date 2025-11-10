@@ -6,7 +6,7 @@ import pencilIcon from '@/assets/pencil-icon.svg';
 import { useToDoStore } from '@/store/store';
 import type { ToDoItem } from '@/types/storeTypes';
 import { computed, ref } from 'vue';
-import CustomButton from './CustomButton.vue';
+import CustomButton from './ui/CustomButton.vue';
 
 interface Props {
   todo: ToDoItem;

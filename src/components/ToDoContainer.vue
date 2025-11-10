@@ -2,7 +2,7 @@
 import ToDoList from '@/components/ToDoList.vue';
 import ToDoStats from '@/components/ToDoStats.vue';
 import { useToDoStore } from '@/store/store';
-import CustomButton from './CustomButton.vue';
+import CustomButton from './ui/CustomButton.vue';
 
 const toDoStore = useToDoStore();
 const handleDeleteAllButton = () => {

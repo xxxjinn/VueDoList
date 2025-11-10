@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useToDoStore } from '@/store/store';
 import { ref } from 'vue';
-import CustomButton from './CustomButton.vue';
+import CustomButton from './ui/CustomButton.vue';
 
 const inputText = ref('');
 
