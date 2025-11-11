@@ -4,7 +4,7 @@ import checkIcon from '@/assets/check-icon.svg';
 import deleteIcon from '@/assets/delete-icon.svg';
 import pencilIcon from '@/assets/pencil-icon.svg';
 import { useToDoStore } from '@/store/store';
-import type { ToDoItem } from '@/types/storeTypes';
+import type { ToDoItem } from '@/store/types';
 import { computed, ref } from 'vue';
 import CustomButton from './ui/CustomButton.vue';
 

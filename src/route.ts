@@ -1,5 +1,5 @@
-import ToDo from '@/components/ToDo.vue';
-import ToDoHome from '@/components/ToDoHome.vue';
+import ToDo from '@/pages/ToDo.vue';
+import ToDoHome from '@/pages/ToDoHome.vue';
 import { createRouter, createWebHistory } from 'vue-router';
 
 const routes = [

@@ -1,4 +1,4 @@
-import type { ToDoItem } from '@/types/storeTypes';
+import type { ToDoItem } from '@/store/types';
 import { defineStore } from 'pinia';
 
 export const useToDoStore = defineStore('todos', {
