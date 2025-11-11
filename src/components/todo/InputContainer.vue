@@ -12,13 +12,20 @@ const addToDoItem = () => {
   if (toastIfEmpty(inputText.value)) {
     return;
   }
-  toDoStore.addToDoItem({ id: Date.now(), toDoText: inputText.value, isChecked: false });
+  toDoStore.addToDoItem({
+    id: Date.now(),
+    toDoText: inputText.value,
+    isChecked: false,
+  });
   inputText.value = '';
 };
 </script>
 
 <template>
-  <form @submit.prevent="addToDoItem" class="flex h-20 w-full gap-4 items-center justify-between">
+  <form
+    @submit.prevent="addToDoItem"
+    class="flex h-20 w-full gap-4 items-center justify-between"
+  >
     <label for="todo-input" class="sr-only">새 할 일 입력</label>
     <input
       id="todo-input"

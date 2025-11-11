@@ -15,7 +15,8 @@ const options: Intl.DateTimeFormatOptions = {
 };
 today.value = new Intl.DateTimeFormat('ko-KR', options).format(now);
 
-const seed = now.getFullYear() * 10000 + (now.getMonth() + 1) * 100 + now.getDate();
+const seed =
+  now.getFullYear() * 10000 + (now.getMonth() + 1) * 100 + now.getDate();
 const index = seed % musicData.length;
 
 todayMusic.value = musicData[index] as Music;

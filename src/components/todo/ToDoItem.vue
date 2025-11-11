@@ -58,7 +58,9 @@ const textStyle = computed(() =>
         @change="handleToggleChecked"
         :disabled="isEditMode"
       />
-      <p v-if="!isEditMode" :class="[textStyle, 'flex-1']">{{ props.todo.toDoText }}</p>
+      <p v-if="!isEditMode" :class="[textStyle, 'flex-1']">
+        {{ props.todo.toDoText }}
+      </p>
       <input
         v-else
         type="text"

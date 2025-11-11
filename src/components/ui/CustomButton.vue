@@ -37,7 +37,10 @@ const buttonClass = computed(() => {
     icon: '',
   };
 
-  const sizeClass = props.variant === 'icon' ? sizeMap[props.size].icon : sizeMap[props.size].text;
+  const sizeClass =
+    props.variant === 'icon'
+      ? sizeMap[props.size].icon
+      : sizeMap[props.size].text;
 
   return `${base} ${variantMap[props.variant]} ${sizeClass}`;
 });
@@ -49,7 +52,9 @@ const buttonClass = computed(() => {
     :class="buttonClass"
     :type="props.type"
   >
-    <template v-if="props.variant === 'default' || props.variant === 'secondary'">
+    <template
+      v-if="props.variant === 'default' || props.variant === 'secondary'"
+    >
       {{ props.text }}
     </template>
     <template v-else-if="props.variant === 'icon'">
