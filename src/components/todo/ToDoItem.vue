@@ -3,10 +3,10 @@ import binIcon from '@/assets/bin-icon.svg';
 import checkIcon from '@/assets/check-icon.svg';
 import deleteIcon from '@/assets/delete-icon.svg';
 import pencilIcon from '@/assets/pencil-icon.svg';
+import CustomButton from '@/components/ui/CustomButton.vue';
 import { useToDoStore } from '@/store/store';
 import type { ToDoItem } from '@/store/types';
 import { computed, ref } from 'vue';
-import CustomButton from './ui/CustomButton.vue';
 
 interface Props {
   todo: ToDoItem;

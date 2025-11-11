@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import ToDoList from '@/components/ToDoList.vue';
-import ToDoStats from '@/components/ToDoStats.vue';
+import ToDoList from '@/components/todo/ToDoList.vue';
+import ToDoStats from '@/components/todo/ToDoStats.vue';
+import CustomButton from '@/components/ui/CustomButton.vue';
 import { useToDoStore } from '@/store/store';
-import CustomButton from './ui/CustomButton.vue';
 
 const toDoStore = useToDoStore();
 const handleDeleteAllButton = () => {
