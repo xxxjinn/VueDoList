@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import CustomButton from '@/components/ui/CustomButton.vue';
+import { toastIfEmpty } from '@/lib/utils';
 import { useToDoStore } from '@/store/store';
 import { ref } from 'vue';
 
@@ -8,6 +9,9 @@ const inputText = ref('');
 const toDoStore = useToDoStore();
 
 const addToDoItem = () => {
+  if (toastIfEmpty(inputText.value)) {
+    return;
+  }
   toDoStore.addToDoItem({ id: Date.now(), toDoText: inputText.value, isChecked: false });
   inputText.value = '';
 };
@@ -22,6 +26,7 @@ const addToDoItem = () => {
       placeholder="할 일을 입력해주세요"
       v-model="inputText"
     />
+
     <CustomButton text="등록" size="md" variant="secondary" type="submit" />
   </form>
 </template>

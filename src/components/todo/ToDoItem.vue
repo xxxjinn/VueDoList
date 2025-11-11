@@ -4,6 +4,7 @@ import checkIcon from '@/assets/check-icon.svg';
 import deleteIcon from '@/assets/delete-icon.svg';
 import pencilIcon from '@/assets/pencil-icon.svg';
 import CustomButton from '@/components/ui/CustomButton.vue';
+import { toastIfEmpty } from '@/lib/utils';
 import { useToDoStore } from '@/store/store';
 import type { ToDoItem } from '@/store/types';
 import { computed, ref } from 'vue';
@@ -19,6 +20,9 @@ const isEditMode = ref(false);
 
 const toggleEditMode = () => {
   if (isEditMode.value) {
+    if (toastIfEmpty(inputText.value)) {
+      return;
+    }
     toDoStore.editToDoItem(props.todo.id, inputText.value);
     isEditMode.value = false;
   } else {
