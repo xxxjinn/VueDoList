@@ -7,7 +7,7 @@ import 'vue-sonner/style.css';
   <Toaster
     position="top-right"
     :toast-options="{
-      classes: { error: '!bg-[#F15B5D] !border-[#F15B5D] !text-white' },
+      classes: { error: '!bg-error !border-error !text-white' },
     }"
   />
   <router-view />

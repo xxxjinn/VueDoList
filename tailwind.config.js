@@ -13,6 +13,7 @@ export default {
           500: '#5F9FCC',
           600: '#3C83B9',
         },
+        error: '#F15B5D',
       },
     },
   },
