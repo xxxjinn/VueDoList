@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import { musicData } from '@/data/data';
-import type { Music } from '@/types/dataTypes';
+import { musicData, type Music } from '@/data/data';
 import { ref } from 'vue';
 
 const today = ref('');

@@ -1,4 +1,7 @@
-import type { Music } from '@/types/dataTypes';
+export interface Music {
+  artist: string;
+  title: string;
+}
 
 export const musicData: Music[] = [
   { artist: 'Kendrick Lamar', title: 'HUMBLE.' },
