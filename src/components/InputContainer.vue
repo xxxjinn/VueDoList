@@ -22,6 +22,6 @@ const addToDoItem = () => {
       placeholder="할 일을 입력해주세요"
       v-model="inputText"
     />
-    <CustomButton text="등록" size="md" variant="secondary" type="submit" aria-label="" />
+    <CustomButton text="등록" size="md" variant="secondary" type="submit" />
   </form>
 </template>
