@@ -1,9 +1,5 @@
 <script setup lang="ts">
-import { musicData, type Music } from '@/data/data';
-import { ref } from 'vue';
-
-const today = ref('');
-const todayMusic = ref<Music | null>(null);
+import { musicData } from '@/data/data';
 
 const now = new Date();
 const options: Intl.DateTimeFormatOptions = {
@@ -13,13 +9,12 @@ const options: Intl.DateTimeFormatOptions = {
   day: 'numeric',
   weekday: 'long',
 };
-today.value = new Intl.DateTimeFormat('ko-KR', options).format(now);
+const today = new Intl.DateTimeFormat('ko-KR', options).format(now);
 
 const seed =
   now.getFullYear() * 10000 + (now.getMonth() + 1) * 100 + now.getDate();
 const index = seed % musicData.length;
-
-todayMusic.value = musicData[index] as Music;
+const todayMusic = musicData[index];
 </script>
 
 <template>
