@@ -14,7 +14,7 @@ interface Props {
 }
 
 const props = defineProps<Props>();
-const toDoStore = useToDoStore();
+const { editToDoItem, deleteToDoItem, toggleChecked } = useToDoStore();
 const inputText = ref(props.todo.toDoText);
 const isEditMode = ref(false);
 
@@ -23,7 +23,7 @@ const toggleEditMode = () => {
     if (toastIfEmpty(inputText.value)) {
       return;
     }
-    toDoStore.editToDoItem(props.todo.id, inputText.value);
+    editToDoItem(props.todo.id, inputText.value);
     isEditMode.value = false;
     return;
   }
@@ -36,11 +36,11 @@ const handleDeleteOrCancel = () => {
     inputText.value = props.todo.toDoText;
     return;
   }
-  toDoStore.deleteToDoItem(props.todo.id);
+  deleteToDoItem(props.todo.id);
 };
 
 const handleToggleChecked = () => {
-  toDoStore.toggleChecked(props.todo.id);
+  toggleChecked(props.todo.id);
 };
 
 const textStyle = computed(() =>
