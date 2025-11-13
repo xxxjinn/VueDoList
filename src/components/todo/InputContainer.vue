@@ -6,13 +6,13 @@ import { ref } from 'vue';
 
 const inputText = ref('');
 
-const toDoStore = useToDoStore();
+const { addToDoItem } = useToDoStore();
 
-const addToDoItem = () => {
+const addToDo = () => {
   if (toastIfEmpty(inputText.value)) {
     return;
   }
-  toDoStore.addToDoItem({
+  addToDoItem({
     id: Date.now(),
     toDoText: inputText.value,
     isChecked: false,
@@ -23,7 +23,7 @@ const addToDoItem = () => {
 
 <template>
   <form
-    @submit.prevent="addToDoItem"
+    @submit.prevent="addToDo"
     class="flex h-20 w-full gap-4 items-center justify-between"
   >
     <label for="todo-input" class="sr-only">새 할 일 입력</label>
@@ -33,7 +33,6 @@ const addToDoItem = () => {
       placeholder="할 일을 입력해주세요"
       v-model="inputText"
     />
-
     <CustomButton text="등록" size="md" variant="secondary" type="submit" />
   </form>
 </template>
