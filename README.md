@@ -39,6 +39,8 @@
 │		├── store/                    <!-- pinia 관리 -->
 │		│   ├── store.ts
 │		│   └── types.ts
+│		├── constants/ 
+│		│   └── url.ts                <!-- url 상수 관리 -->
 │		├──  App.vue
 │		├──  main.ts 
 │		└──  route.ts                  <!-- 라우팅 관리 -->
