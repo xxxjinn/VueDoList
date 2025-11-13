@@ -10,8 +10,7 @@ const toDoStore = useToDoStore();
     <span class="font-semibold text-primary-500">
       {{ toDoStore.checkedCount }}</span
     >
-    <span>/</span>
-    <span class="font-semibold">{{ toDoStore.todos.length }}</span>
+    <span class="font-semibold"> / {{ toDoStore.todos.length }}</span>
     <span
       v-if="
         toDoStore.todos.length > 0 &&
