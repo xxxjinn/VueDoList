@@ -25,18 +25,18 @@ const toggleEditMode = () => {
     }
     toDoStore.editToDoItem(props.todo.id, inputText.value);
     isEditMode.value = false;
-  } else {
-    isEditMode.value = true;
+    return;
   }
+  isEditMode.value = true;
 };
 
 const handleDeleteOrCancel = () => {
   if (isEditMode.value) {
     isEditMode.value = false;
     inputText.value = props.todo.toDoText;
-  } else {
-    toDoStore.deleteToDoItem(props.todo.id);
+    return;
   }
+  toDoStore.deleteToDoItem(props.todo.id);
 };
 
 const handleToggleChecked = () => {
@@ -45,7 +45,7 @@ const handleToggleChecked = () => {
 
 const textStyle = computed(() =>
   props.todo.isChecked ? 'text-gray-400 line-through' : 'text-gray-600',
-); //computed(): ref 값이 바뀌면 자동으로 다시 계산
+);
 </script>
 
 <template>
