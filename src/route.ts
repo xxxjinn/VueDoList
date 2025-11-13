@@ -1,10 +1,11 @@
+import { URL } from '@/constants/url';
 import ToDo from '@/pages/ToDo.vue';
 import ToDoHome from '@/pages/ToDoHome.vue';
 import { createRouter, createWebHistory } from 'vue-router';
 
 const routes = [
-  { path: '/', component: ToDoHome },
-  { path: '/todo', component: ToDo },
+  { path: URL.home, component: ToDoHome },
+  { path: URL.toDo, component: ToDo },
 ];
 
 export const router = createRouter({
