@@ -14,7 +14,7 @@ interface Props {
 }
 
 const props = defineProps<Props>();
-const { editToDoItem, deleteToDoItem, toggleChecked } = useToDoStore();
+const { editToDoItem, deleteToDoItem, toggleCompleted } = useToDoStore();
 const inputText = ref(props.todo.toDoText);
 const isEditMode = ref(false);
 
@@ -39,12 +39,12 @@ const handleDeleteOrCancel = () => {
   deleteToDoItem(props.todo.id);
 };
 
-const handleToggleChecked = () => {
-  toggleChecked(props.todo.id);
+const handleToggleCompleted = () => {
+  toggleCompleted(props.todo.id);
 };
 
 const textStyle = computed(() =>
-  props.todo.isChecked ? 'text-gray-400 line-through' : 'text-gray-600',
+  props.todo.isCompleted ? 'text-gray-400 line-through' : 'text-gray-600',
 );
 </script>
 
@@ -54,8 +54,8 @@ const textStyle = computed(() =>
       <input
         type="checkbox"
         class="min-w-5 min-h-5 accent-primary-300 cursor-pointer"
-        :checked="props.todo.isChecked"
-        @change="handleToggleChecked"
+        :checked="props.todo.isCompleted"
+        @change="handleToggleCompleted"
         :disabled="isEditMode"
       />
       <p v-if="!isEditMode" :class="[textStyle, 'flex-1']">

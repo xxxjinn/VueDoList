@@ -4,8 +4,8 @@ import { defineStore } from 'pinia';
 export const useToDoStore = defineStore('todos', {
   state: () => ({ todos: [] as ToDoItem[] }),
   getters: {
-    checkedCount(state) {
-      return state.todos.filter((todo) => todo.isChecked).length;
+    completedCount(state) {
+      return state.todos.filter((todo) => todo.isCompleted).length;
     },
   },
   actions: {
@@ -25,10 +25,10 @@ export const useToDoStore = defineStore('todos', {
         todo.toDoText = newText;
       }
     },
-    toggleChecked(id: number) {
+    toggleCompleted(id: number) {
       const todo = this.todos.find((todo) => todo.id === id);
       if (todo) {
-        todo.isChecked = !todo.isChecked;
+        todo.isCompleted = !todo.isCompleted;
       }
     },
   },

@@ -15,7 +15,7 @@ const addToDo = () => {
   addToDoItem({
     id: Date.now(),
     toDoText: inputText.value,
-    isChecked: false,
+    isCompleted: false,
   });
   inputText.value = '';
 };
