@@ -6,7 +6,7 @@ import ToDoHeader from '@/components/todo/ToDoHeader.vue';
 
 <template>
   <div
-    class="flex flex-col justify-center items-center w-[70vw] h-[100vh] mx-auto"
+    class="flex flex-col justify-center items-center w-[70vw] h-[100vh] mx-auto gap-6"
   >
     <ToDoHeader />
     <ToDoContainer />

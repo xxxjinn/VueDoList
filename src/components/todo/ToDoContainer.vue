@@ -12,7 +12,7 @@ const handleDeleteAllButton = () => {
 
 <template>
   <div
-    class="flex flex-col bg-white/70 rounded-3xl shadow-sm gap-6 justify-center m-10 w-full h-[60%] p-6"
+    class="flex flex-col bg-white/70 rounded-3xl shadow-sm gap-6 justify-center w-full h-[60%] p-6"
   >
     <header class="flex items-center justify-between w-full">
       <h1 class="text-3xl font-semibold">Vue Do List</h1>
