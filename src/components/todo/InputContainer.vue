@@ -32,6 +32,7 @@ const addToDo = () => {
       class="rounded-xl shadow-sm h-12 w-full p-3 bg-white/70"
       placeholder="할 일을 입력해주세요"
       v-model="inputText"
+      type="text"
     />
     <CustomButton text="등록" size="md" variant="secondary" type="submit" />
   </form>
