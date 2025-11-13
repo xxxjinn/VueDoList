@@ -10,7 +10,6 @@ interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  //variant props default 설정
   variant: 'default',
   size: 'sm',
   text: '확인',
