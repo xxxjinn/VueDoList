@@ -4,9 +4,9 @@ import ToDoStats from '@/components/todo/ToDoStats.vue';
 import CustomButton from '@/components/ui/CustomButton.vue';
 import { useToDoStore } from '@/store/store';
 
-const toDoStore = useToDoStore();
+const { deleteAllToDoItem } = useToDoStore();
 const handleDeleteAllButton = () => {
-  toDoStore.deleteAllToDoItem();
+  if (confirm('할 일을 모두 삭제할까요?')) deleteAllToDoItem();
 };
 </script>
 
@@ -14,10 +14,10 @@ const handleDeleteAllButton = () => {
   <div
     class="flex flex-col bg-white/70 rounded-3xl shadow-sm gap-6 justify-center m-10 w-full h-[60%] p-6"
   >
-    <div class="flex items-center justify-between w-full">
+    <header class="flex items-center justify-between w-full">
       <h1 class="text-3xl font-semibold">Vue Do List</h1>
       <CustomButton text="전체삭제" @click="handleDeleteAllButton" />
-    </div>
+    </header>
     <ToDoStats />
     <ToDoList />
   </div>
