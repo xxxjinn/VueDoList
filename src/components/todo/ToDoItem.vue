@@ -7,7 +7,7 @@ import CustomButton from '@/components/ui/CustomButton.vue';
 import { toastIfEmpty } from '@/lib/utils';
 import { useToDoStore } from '@/store/store';
 import type { ToDoItem } from '@/store/types';
-import { computed, ref } from 'vue';
+import { ref } from 'vue';
 
 interface Props {
   todo: ToDoItem;
@@ -42,10 +42,6 @@ const handleDeleteOrCancel = () => {
 const handleToggleCompleted = () => {
   toggleCompleted(todo.id);
 };
-
-const textStyle = computed(() =>
-  todo.isCompleted ? 'text-gray-400 line-through' : 'text-gray-600',
-);
 </script>
 
 <template>
@@ -58,7 +54,13 @@ const textStyle = computed(() =>
         @change="handleToggleCompleted"
         :disabled="isEditMode"
       />
-      <p v-if="!isEditMode" :class="[textStyle, 'flex-1']">
+      <p
+        v-if="!isEditMode"
+        :class="[
+          todo.isCompleted ? 'text-gray-400 line-through' : 'text-gray-600',
+          'flex-1',
+        ]"
+      >
         {{ todo.toDoText }}
       </p>
       <input
