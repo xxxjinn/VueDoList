@@ -13,9 +13,9 @@ interface Props {
   todo: ToDoItem;
 }
 
-const props = defineProps<Props>();
+const { todo } = defineProps<Props>();
 const { editToDoItem, deleteToDoItem, toggleCompleted } = useToDoStore();
-const inputText = ref(props.todo.toDoText);
+const inputText = ref(todo.toDoText);
 const isEditMode = ref(false);
 
 const toggleEditMode = () => {
@@ -23,7 +23,7 @@ const toggleEditMode = () => {
     if (toastIfEmpty(inputText.value)) {
       return;
     }
-    editToDoItem(props.todo.id, inputText.value);
+    editToDoItem(todo.id, inputText.value);
     isEditMode.value = false;
     return;
   }
@@ -33,18 +33,18 @@ const toggleEditMode = () => {
 const handleDeleteOrCancel = () => {
   if (isEditMode.value) {
     isEditMode.value = false;
-    inputText.value = props.todo.toDoText;
+    inputText.value = todo.toDoText;
     return;
   }
-  deleteToDoItem(props.todo.id);
+  deleteToDoItem(todo.id);
 };
 
 const handleToggleCompleted = () => {
-  toggleCompleted(props.todo.id);
+  toggleCompleted(todo.id);
 };
 
 const textStyle = computed(() =>
-  props.todo.isCompleted ? 'text-gray-400 line-through' : 'text-gray-600',
+  todo.isCompleted ? 'text-gray-400 line-through' : 'text-gray-600',
 );
 </script>
 
@@ -54,12 +54,12 @@ const textStyle = computed(() =>
       <input
         type="checkbox"
         class="min-w-5 min-h-5 accent-primary-300 cursor-pointer"
-        :checked="props.todo.isCompleted"
+        :checked="todo.isCompleted"
         @change="handleToggleCompleted"
         :disabled="isEditMode"
       />
       <p v-if="!isEditMode" :class="[textStyle, 'flex-1']">
-        {{ props.todo.toDoText }}
+        {{ todo.toDoText }}
       </p>
       <input
         v-else
